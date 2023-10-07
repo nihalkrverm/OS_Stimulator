@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+  <title>Project</title>
+  
+  <!-- Bootstrap core CSS -->
+  <link href="../home/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="../home/assets/css/fontawesome.css">
+  <link rel="stylesheet" href="../home/assets/css/templatemo-grad-school.css">
+  <link rel="stylesheet" href="../home/assets/css/owl.css">
+  <link rel="stylesheet" href="../home/assets/css/lightbox.css">
+
+
+
+
+
+
+<link rel="stylesheet" href="./bootstrap.min.css">
+
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+<br><br><br>
+
+
+
+
+
+
+
+
+  <title>
+    WIKI
+  </title>
+
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<!-- </head>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid"> 
+    <div class="navbar-header">
+      <a class="navbar-brand" href="../os_sim.html" style="color:white;">OS simulator</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="index.html">Home</a></li>
+      <li class="active"><a href="#">Wiki</a></li>
+    </ul>
+  </div>
+</nav> -->
+
+<style>
+  body{
+  margin-left: 0.5%;
+  margin-right: 2%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+} */
+/* 
+.flex-container {
+    display: -webkit-flex;
+    display: flex;  
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    text-align: center;
+}
+
+.flex-container > * {
+    padding: 15px;
+    -webkit-flex: 1 100%;
+    flex: 1 100%;
+}
+
+header {background: black;color:white;}
+
+.intro{
+  margin-top: 22px;
+  padding: 30px 0px;
+  background-color: #f3f3f3;
+}
+body{
+  margin-left: 5%;
+  margin-right: 2%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+} */
+</style>
+<body style="background-color: rgba(255, 255, 255, 0.95);">
+        
+  <header class="main-header clearfix" role="header">
+    <div class="logo">
+      <a href="#"><em>OS</em> SIMULATOR</a>
+    </div>
+    <a href="../home/index.html#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+    <nav id="menu" class="main-nav" role="navigation">
+      <ul class="main-menu">
+        <li><a href="../home/index.html#section1">Home</a></li>
+        <li class="has-submenu"><a href="../home/index.html#section2">Summary</a>
+          <ul class="sub-menu" text-align: left>
+            <li><a href="../home/index.html#section2">Os Algorithms</a></li>
+            <!-- <li><a href="#section3">What we do?</a></li> -->
+            <!-- <li><a href="#section3">How it works?</a></li> -->
+            <!-- <li><a href="https://templatemo.com/about" rel="sponsored" class="external">External URL</a></li> -->
+          </ul>
+        </li>
+        <li><a href="#section4">ALGORITHMS</a></li>
+        <!-- <li><a href="#section5">Video</a></li> -->
+        <li><a href="#section6">Contact</a></li>
+        <li><a href="https://templatemo.com" class="external">External</a></li>
+      </ul>
+    </nav>
+  </header>
+
+    </div>
+
+  <h1>Paging</h1>
+
+  <p>
+    Even with relocation, both fixed partitions and segmentation had problems. Fixed partitions still
+    suffer from internal fragmentation and segments may require many expensive relocations. How do
+    we solve this problem? By shrinking fixed partitions down to a reasonable size, and extending the
+    concept of a virtual address to allow a process to allocate many small partitions. These partitions
+    are called pages.
+  </p>
+
+ 
+
+<h2>Virtual Addressing</h2>
+<p>If the page size is a power of two, then a virtual address in a paging system can be partitioned into
+  two pieces. The page number and the page offset. The low-order bits (e.g. 12 bits for 4K page
+  size) just specify the byte offset within a particular page, while the high-order bits actually specify
+  which page in memory is being addressed. If a virtual address is interpreted as a physical address,
+  then the page number is just the particular page in memory. In reality, however a page table is used
+  to translate from virtual to physical addresses. </p>
+<ul>
+  
+</ul>
+
+<h2>Page Tables</h2>
+<p>With simple segmentation or fixed paritioning, a process only needed to carry around one or two
+  extra words of information for the OS and HW to manage its address space. With paging, a process
+  can be reasonably expected to need hundreds or thousands of pages. Therefore a datastructure is
+  needed to hold all the address space information. This data structure is called a page table. Essentially, a page table is an array of entries mapping virtual addresses to physical addresses. The page
+  number from a virtual address is an index in the page table. The entry at that index contains the
+  physical address of the page in question</p>
+ <p>SJF can be proven to be the fastest scheduling algorithm, 
+        but it suffers from one important problem: How do you know how 
+        long the next CPU burst is going to be? 
+            The next CPU burst length is thereby approximated using statistical techniques 
+            like exponential average.</p>
+   
+
+<h2>Protection and Swapping with Pages</h2>
+<p>Memory protection in a paging system is a little different. For a page table, there is a distinguished
+  value (often 0) that signifies an invalid mapping. If the page table entry is invalid, that means that
+  that virtual address is not mapped in this process’ address space. Therefore it is an invalid address
+  and the OS should be signalled. In this sense, page tables should all be initialized to invalid entries.
+  Additionally, allocation of memory to processes is all handled in terms of pages. All the OS has to
+  worry about is managing pages, rather than a contiguous sea of bytes.</p>
+
+<h2>Page Table Performance and Implementation</h2>
+<p>Paging solves many of the problems associated with partitions and segments. It eliminates external
+  fragmentation, minimizes internal fragmentation, and allows the OS to allocate and swap process’
+  address spaces in a cheaper, incremental fashion. However, page tables are space-hungry and
+  generate extra memory traffic.
+  Consider you average intel PC. It uses 32-bit addresses and defaults to 4K pages. That means
+  20 bits per page number, or 2
+  20 page table entries. Each entry is 32 bits (4 bytes) therefore a flat
+  array of page table entries would consume 4MB (per process!). Now, with our cheap RAM, that
+  may not seem like a lot, but in the early 90s that would set you back $200.</p>
+
+<ul>
+
+</ul>
+
+<h2>Inverted Page Table</h2>
+<p>One solution is the inverted page table (aka content-addressable memory). A standard page table
+  contains mappings from each virtual page to a physical frame, even if the virtual page is invalid.
+  An inverted page table reduces the space requirements by only storing mappings for valid pages.
+  It does this by inverting the mapping and having a table of frame entries that specify the virtual
+  page being mapped (the index in the table is the physical frame address and the entry is the virtual
+  address). If the number of physical frames is smaller than the virtual address space, you save space.
+  However, finding the virtual to physical mapping is more complex. Each virtual address must
+  be resolved by searching the IPT, which means that the translation is slower and uses more hardware. In practice IPTs are only feasible for small memories (a few thousand frames at most)</p>
+
+
+</body>
+</html>

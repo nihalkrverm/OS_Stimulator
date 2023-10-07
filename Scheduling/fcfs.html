@@ -1,0 +1,541 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+
+  <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  
+	<title>Project</title>
+	
+	<!-- Bootstrap core CSS -->
+	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  
+	<!-- Additional CSS Files -->
+	<link rel="stylesheet" href="../home/assets/css/fontawesome.css">
+	<link rel="stylesheet" href="../home/assets/css/templatemo-grad-school.css">
+	<link rel="stylesheet" href="../home/assets/css/owl.css">
+	<link rel="stylesheet" href="../home/assets/css/lightbox.css">
+  
+  
+
+
+
+
+
+
+
+<link rel="stylesheet" href="./bootstrap.min.css">
+
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+
+
+
+
+
+
+
+
+
+
+
+  <title>
+   FCFS
+  </title>
+
+  <link rel="stylesheet" href="./bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
+</head>
+
+
+<script>
+
+var sequence=[];
+var complete;
+var time;
+var i;
+var total;
+var proc;
+var n;
+var average_wt=0;
+var average_tat=0;
+var stuff=[];
+var index=1;
+var throughput;
+var index=1;
+var cpu_efficiency;
+var mod = 0;
+$(document).ready(function(){
+  $('#add').click(function(){
+    AddtoList();
+  })
+  function DisplayList(){
+    var table = document.getElementById("ept");
+    console.log(stuff[stuff.length-1].no);
+     $('#ept').append("<tr style="+"background-color:#fff;"+"><td>"+stuff[stuff.length-1].no+"</td><td>"+stuff[stuff.length-1].at+"</td><td>"+stuff[stuff.length-1].bt1+"</td></tr>");
+ 
+  }
+  function AddtoList(){
+    var arrivalTime=parseInt(document.getElementById("at1").value);
+    var burstTime=parseInt(document.getElementById("bt1").value);
+    
+
+    if(document.getElementById("at1").value == "") {
+      alert("Arrival time field is empty!");
+      return;
+    }
+
+    if(document.getElementById("bt1").value == "") {
+      alert("Burst time field is empty!");
+      return;
+    }
+
+    if(arrivalTime < 0) {
+      alert("Arrival time cannot be negative!");
+      return;
+    }
+
+    if(burstTime < 0) {
+      alert("Burst time cannot be negative!");
+      return;
+    }
+
+    var ioTime=parseInt("0");
+    var FinalburstTime=parseInt("0");
+    console.log(arrivalTime);
+    console.log(burstTime);
+    var rtj=[];
+    rtj.push(burstTime);
+    rtj.push(ioTime);
+    rtj.push(FinalburstTime);
+    console.log(rtj);
+    stuff.push({
+      "at":arrivalTime,
+      "bt1":burstTime,
+      "io": ioTime,
+      "bt2" : FinalburstTime,
+      "check" : parseInt("0"),
+      "finish" : parseInt("0"),
+      "no":index,
+      "rt":rtj,
+      "point" : parseInt("0"),
+      "wt":parseInt("0"),
+      "tat":parseInt("0")
+    });
+    index=index+1;
+    document.getElementById("at1").value="";
+    document.getElementById("bt1").value="";
+    
+    console.log(stuff);
+    DisplayList();
+  };
+  $('#start').click(function(){
+
+
+    fcfs();
+    var i = 0;
+  console.log(total);
+   console.log(sequence[total].start);
+    var totalTime = sequence[total].start;
+    pixel = parseInt(800/totalTime);
+    console.log("%d---%d\n",totalTime,pixel);
+    var containerWidth = pixel*totalTime + 2;
+    console.log("containerWidth is %d",containerWidth);
+    $('#outer-div').css('width',containerWidth+'px');
+    displayBlock(i);
+  })
+  var Q=[];
+  function fcfs(){
+    var proc=[];
+    for(i=0;i<stuff.length;i++){
+      proc.push(i+1);
+    }
+    var n=stuff.length;
+    for(i=0;i<n;i++){
+      for(j=i+1;j<n;j++){
+        if(stuff[i].at>stuff[j].at)
+        {
+          var temp;
+          temp=stuff[i];
+          stuff[i]=stuff[j];
+          stuff[j]=temp;
+          temp=proc[i];
+          proc[i]=proc[j];
+          proc[j]=temp;
+        }
+      }
+    }
+    n=stuff.length;
+    console.log(stuff);
+    var time=0;
+    var complete=0;
+    var temp=null;
+    var st_time;
+    sequence=[];
+    if(stuff[0].at>0)
+    {
+      console.log("Arrival time of the first process is not zero!");
+      sequence.push({start:0 , n:null});
+      time+=stuff[0].at;
+    }
+    Enqueue(0);
+    var temp=null;
+    while(complete!=n)
+    {
+      var index;
+      if(Q.length>0)
+        index=Dequeue();
+      else
+        index=null;
+      if(index!=null)
+      {
+        if(stuff[index].point==0)
+        {
+          stuff[index].point++;
+          stuff[index].check=1;
+          sequence.push({start:time, n:proc[index]});
+          time+=stuff[index].rt[0];
+          if(stuff[index].rt[1]==0 && stuff[index].rt[2]==0)
+          {
+            complete++;
+            stuff[index].finish=1;
+            stuff[index].tat=time-stuff[index].at;
+            stuff[index].wt=time-stuff[index].at-stuff[index].bt1;
+          }
+          for(j=0;j<n;j++){
+            if(stuff[j].at<=time && stuff[j].finish==0 && stuff[j].check==0 && Q.indexOf(j)==-1)
+              Enqueue(j);
+            if(stuff[j].at<=time && stuff[j].check==1 && stuff[j].finish==0 && j!=index)
+            {
+              stuff[j].rt[1]-=stuff[index].rt[0];
+              if(stuff[j].rt[1]<=0)
+              {
+                stuff[j].check=0;
+                Enqueue(j);
+                stuff[j].point=2;
+              }
+            }
+          }
+
+        }
+        else if(stuff[index].point==2)
+        {
+          complete++;
+          stuff[index].finish=1;
+          sequence.push({start:time,n:proc[index]});
+          time+=stuff[index].rt[2];
+          stuff[index].tat=time-stuff[index].at;
+          stuff[index].wt=time-stuff[index].bt1-stuff[index].bt2-stuff[index].at;
+          for(j=0;j<n;j++){
+            if(stuff[j].at<=time && stuff[j].finish==0 && stuff[j].check==0 && Q.indexOf(j)==-1)
+              Enqueue(j);
+            if(stuff[j].at<=time && stuff[j].check==1 && stuff[j].finish==0 && j!=index)
+            {
+              stuff[j].rt[1]-=stuff[index].rt[2];
+              console.log(stuff[j].rt);
+              if(stuff[j].rt[1]<=0)
+              {
+                stuff[j].check=0;
+                Enqueue(j);
+                stuff[j].point=2;
+              }
+            }
+          }
+        }
+        temp=index;
+      }
+      else if(index==null)
+      {
+        if(temp!=index)
+        {
+          sequence.push({start:time, n: null});
+        }
+        time++;
+        for(j=0;j<n;j++){
+          if(stuff[j].at<=time && stuff[j].finish==0 && stuff[j].check==0 && Q.indexOf(j)==-1)
+            Enqueue(j);
+          if(stuff[j].at<=time && stuff[j].check==1 && stuff[j].finish==0 && j!=index)
+          {
+            stuff[j].rt[1]--;
+            if(stuff[j].rt[1]<=0)
+            {
+              stuff[j].check=0;
+              Enqueue(j);
+              stuff[j].point++;
+            }
+          }
+        }
+        temp=index;
+      }
+      console.log(Q);
+      console.log(complete);
+
+    }
+    sequence.push({start:time,n:-1});
+    console.log(sequence);
+    console.log(stuff);
+    total = sequence.length-1;
+    console.log(total);
+    var sum_at=0;
+    for(i=0;i<n;i++)
+      sum_at+=stuff[i].wt;
+    average_wt=sum_at/n;
+    var sum_tat=0;
+    for(i=0;i<n;i++)
+      sum_tat+=stuff[i].tat;
+    average_tat=sum_tat/n;
+    var pixel = 0;
+    var sum_null=0;
+    throughput=n/time;
+    for(i=0;i<sequence.length;i++)
+    {
+      if(sequence[i].n==null)
+      {
+        sum_null+=sequence[i+1].start-sequence[i].start;
+      }
+    }
+    cpu_efficiency=((time-sum_null)/time)*100;
+  }
+  function Enqueue(i){
+    Q.push(i);
+  }
+  function Dequeue(i){
+    return Q.shift();
+  }
+
+  function drawTable(i){
+    if(i<stuff.length){
+    var table = document.getElementById("ptable");
+    console.log(stuff[i].wt);
+    $("#ptable").append("<tr><td>"+stuff[i].no+"</td><td>"+stuff[i].at+"</td><td>"+stuff[i].bt1+"</td><td>"+stuff[i].wt+"</td><td>"+stuff[i].tat+"</td></tr>");
+    drawTable(i+1);
+  }
+  else
+  {
+    var cardAdd = document.getElementById("cardAdd");
+     cardAdd.classList.add("card");
+     var element = document.getElementById("Average");
+    element.classList.add("card-body");
+    // $("#Average").append("<b>CPU utilization : "+cpu_efficiency.toFixed(3)+"%</b><br>");
+    // $("#Average").append("<b>Overall throughput : "+throughput.toFixed(3)+"</b><br>");
+    $("#Average").append("<b>Average Turn Around time : "+average_tat.toFixed(3)+"</b><br>");
+    $("#Average").append("<b>Average Waiting time: "+average_wt.toFixed(3)+"</b><br>");
+  }
+
+}
+
+  function displayBlock(i){
+    if(i == total){
+      document.getElementById("ptab").style.display='inline-table';
+      drawTable(0);
+      return;
+    }
+
+    var blockWidth = (sequence[i+1].start - sequence[i].start)*pixel;
+    var processName = sequence[i].n;
+    document.getElementById("gantt").style.display='block';
+    document.getElementById("outer-div").style.display='inline-block';
+    document.getElementById("bt1").style.display='none';
+    document.getElementById("at1").style.display='none';
+    document.getElementById("add").style.display='none';
+    document.getElementById("start").style.display='none';
+
+
+    if(sequence[i].n==null)
+    {
+      $('#outer-div').append('<div class="block" id="process-'+sequence[i].start +'" style="background-color:rgba(112, 128, 144, 0.44);">CPU Idle<div class="bottom">'+ sequence[i+1].start +'</div></div>');
+    }
+    else
+    {
+      $('#outer-div').append('<div class="block" id="process-'+sequence[i].start +'">P'+ sequence[i].n +'<div class="bottom">'+ sequence[i+1].start +'</div></div>');
+    }
+    $('#process-'+sequence[i].start).css('width',blockWidth);
+
+    $('#process-'+sequence[i].start).fadeIn('slow',function(){
+      displayBlock(i+1);
+    });
+
+  }
+});
+</script>
+<style>
+body{
+  text-align: center;
+  font-family: 'PT Sans' , sans-serif;
+  background-color: #f1e4e9;
+}
+
+#b{
+  font-size:2 em;
+}
+
+
+p{
+  font-size: 3 em;
+}
+
+#outer-div{
+  display: none;
+  margin: auto;
+  width: 802px;
+  height: 50px;
+  border: 1px solid rgb(221, 59, 59);
+}
+
+.block{
+  position: relative;
+  display: none;
+  border-right: 1px solid black;
+  float: left;
+  text-align: center;
+  background-color: rgba(87, 175, 213, 0.44);
+  height: 48px;
+}
+#ptab{
+  display: none;
+}
+
+.bottom{
+ /* position: absolute;*/
+  width: 100%;
+  margin-top: 38px;
+  text-align: right;
+  margin-bottom: 1px;
+}
+</style>
+<body style="background-color: rgba(48, 62, 89, 0.95);">
+    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <a class="navbar-brand" href="../os_sim.html" style="color:white;">OS Simulator</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+            <li class="nav-item active" style="color:white;">
+                <a class="nav-link" style="color:white;" href="index.html">Home</a>
+            </li>
+            <li class="nav-item active" style="color:white;">
+              <a class="nav-link" style="color:white;" href="wiki.html">Wiki</a>
+            </li> 
+          </ul>
+        </div>
+      </nav> -->
+
+
+
+
+
+      <header class="main-header clearfix" role="header">
+        <div class="logo">
+          <a href="#"><em>OS</em> SIMULATOR</a>
+        </div>
+        <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+        <nav id="menu" class="main-nav" role="navigation">
+          <ul class="main-menu">
+          <li><a href="../home/index.html#section1">Home</a></li>
+          <li class="has-submenu"><a href="../home/index.html#section2">Summary</a>
+            <ul class="sub-menu" text-align: left>
+            <li><a href="#section2">Os Algorithms</a></li>
+            <!-- <li><a href="#section3">What we do?</a></li> -->
+            <!-- <li><a href="#section3">How it works?</a></li> -->
+            <!-- <li><a href="https://templatemo.com/about" rel="sponsored" class="external">External URL</a></li> -->
+            </ul>
+          </li>
+          <li><a href="#section4">ALGORITHMS</a></li>
+          <!-- <li><a href="#section5">Video</a></li> -->
+          <li><a href="#section6">Contact</a></li>
+          <li><a href="https://templatemo.com" class="external">External</a></li>
+          </ul>
+        </nav>
+        </header>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+  <h1 style="padding:40px;">
+    First Come First Serve
+  </h1>
+    <div>
+      <table id="ep" class="table table-bordered table-striped" style="width:70%;" align="center">
+        <thead class="thead-dark">
+        <th>Process Id.</th>
+        <th>Arrival Time </th>
+        <th>Burst Time </th>
+      </tr>
+      <tbody id="ept">
+      </tbody>
+    </thead>
+  </table>
+
+    <div style="width:400px; margin: auto; ">
+      <div class="form-group">
+        <input type='number' class="form-control" min='0' id='at1' placeholder="arrival time"></input>
+      </div>
+
+      <div class="form-group">
+        <input type='number'  class="form-control " id='bt1' placeholder="burst time"></input>
+      </div>
+      </div>
+    </div>
+      <button id="add" class="btn btn-secondary" onclick="AddtoList()">Add</button>
+      <button id="start" class="btn btn-secondary">Start</button>
+  <br>
+  <br>
+
+  <h2 id="gantt" style="display:none;">
+    Gantt Chart
+  </h2>
+  <div id="outer-div">
+  </div>
+  <br><br><br>
+  
+      <div id="cardAdd">
+      <table id="ptab" class="table table-bordered table-striped" style="width:70%;margin-top:20px; " align="center">
+      <thead>
+      <th>Process Id.</th>
+      <th>Arrival time</th>
+      <th>Burst time</th>
+      <th>Waiting time</th>
+      <th>Turn Around Time</th>
+    </thead>
+
+      <tbody id="ptable">
+      </tbody>
+      </table>
+        <div id="Average"></div>
+      </div>
+  </div>
+
+</div>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+
+	
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+  <title>Project</title>
+  
+  <!-- Bootstrap core CSS -->
+  <link href="../home/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="../home/assets/css/fontawesome.css">
+  <link rel="stylesheet" href="../home/assets/css/templatemo-grad-school.css">
+  <link rel="stylesheet" href="../home/assets/css/owl.css">
+  <link rel="stylesheet" href="../home/assets/css/lightbox.css">
+
+
+
+
+
+
+
+  
+
+  <title>Page Replacement</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+</head>
+
+<body style="background-color: rgba(48, 62, 89, 0.95)";>
+  
+<header class="main-header clearfix" role="header">
+	<div class="logo">
+	  <a href="#"><em>OS</em> SIMULATOR</a>
+	</div>
+	<a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+	<nav id="menu" class="main-nav" role="navigation">
+	  <ul class="main-menu">
+		<li><a href="../home/index.html#section1">Home</a></li>
+		<li class="has-submenu"><a href="../home/index.html#section2">Summary</a>
+		  <ul class="sub-menu" text-align: left>
+			<li><a href="#section2">Os Algorithms</a></li>
+			<!-- <li><a href="#section3">What we do?</a></li> -->
+			<!-- <li><a href="#section3">How it works?</a></li> -->
+			<!-- <li><a href="https://templatemo.com/about" rel="sponsored" class="external">External URL</a></li> -->
+		  </ul>
+		</li>
+		<li><a href="#section4">ALGORITHMS</a></li>
+		<!-- <li><a href="#section5">Video</a></li> -->
+		<li><a href="#section6">Contact</a></li>
+		<li><a href="https://templatemo.com" class="external">External</a></li>
+	  </ul>
+	</nav>
+  </header>
+  <br><br><br><br>
+  <div class="container">
+    <div class="jumbotron">
+      <h1 class="display-3">Page Replacement</h1>
+      <p class="lead">When a page that is residing in virtual memory is requested by a process for its execution, the Operating System needs to decide which page will be replaced by this requested page. This process is known as page replacement and is a vital component in virtual memory management.</p>
+      <!-- <hr class="my-4"> -->
+      <!-- <p class="lead">
+        <a class="btn btn-success" href="simulate.html" role="button">SIMULATE</a>
+      </p> -->
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="card text-white bg-dark mb-3" style="max-width: 25rem;">
+          <!-- <div class="card-header">FIFO</div> -->
+          <div class="card-body">
+            <h4 class="card-title">First In First Out</h4>
+            <p class="card-text">In this algorithm, the operating system keeps track of all pages in the memory in a queue, the oldest page is in the front of the queue. When a page needs to be replaced page in the front of the queue is selected for removal.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card text-white bg-dark mb-3" style="max-width: 25rem;">
+          <!-- <div class="card-header">LRU</div> -->
+          <div class="card-body">
+            <h4 class="card-title">Least Recently Used</h4>
+            <p class="card-text">In this algorithm, when a page fault occurs, then the page that has not been used for the longest duration of time is replaced by the newly requested page.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card text-white bg-dark mb-3" style="max-width: 25rem;">
+          <!-- <div class="card-header">Optimal</div> -->
+          <div class="card-body">
+            <h4 class="card-title">Optimal</h4>
+            <p class="card-text">In this algorithm, the pages are replaced with the ones that will not be used for the longest duration of time in the future. In simple terms, the pages that will be referred farthest in the future are replaced in this algorithm.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>

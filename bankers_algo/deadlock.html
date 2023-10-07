@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> deadlock detection </title>
+
+
+	<link rel="stylesheet" href="../home/assets/css/fontawesome.css">
+	<link rel="stylesheet" href="../home/assets/css/templatemo-grad-school.css">
+	<link rel="stylesheet" href="../home/assets/css/owl.css">
+	<link rel="stylesheet" href="../home/assets/css/lightbox.css">
+
+
+
+
+
+
+	<script type="text/javascript" src="deadlock.js"></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<style>
+        h1, h2, h3,h5{
+            text-align: center;
+            }
+			   
+	</style>
+  </head>
+  <body style="background-color: #2B3E50;">
+
+
+	<header class="main-header clearfix" role="header">
+        <div class="logo">
+          <a href="#"><em>OS</em> SIMULATOR</a>
+        </div>
+        <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+        <nav id="menu" class="main-nav" role="navigation">
+          <ul class="main-menu">
+            <li><a href="../home/index.html#section1">Home</a></li>
+            <li class="has-submenu"><a href="../home/index.html#section2">Summary</a>
+              <ul class="sub-menu" text-align: left>
+                <li><a href="#section2">Os Algorithms</a></li>
+                <!-- <li><a href="#section3">What we do?</a></li> -->
+                <!-- <li><a href="#section3">How it works?</a></li> -->
+                <!-- <li><a href="https://templatemo.com/about" rel="sponsored" class="external">External URL</a></li> -->
+              </ul>
+            </li>
+            <li><a href="../home/index.html#section4">ALGORITHMS</a></li>
+            <!-- <li><a href="#section5">Video</a></li> -->
+            <li><a href="../home/index.html#section6">ABOUT</a></li>
+            <li><a href="" class="external">External</a></li>
+          </ul>
+        </nav>
+      </header>
+    
+
+
+
+
+
+
+
+
+
+
+
+	<div class="page-header" style="text-align:center;">
+	<h3 style="color: white;">Single-Instance Resource Deadlock Detection</h3>      
+	</div>
+
+		<div style = "width: 100%;;margin-left:10px;text-align:left;">
+				<div class="input-group input-group-lg" style="width: 350px; margin-left: 10px;">
+						<div class="input-group-prepend">
+								<span class="input-group-text" id="inputGroup-sizing-lg">Number of Resources</span>
+						</div>
+				<input style="color: white;" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id = "totalres">
+				</div>
+			<div class="input-group input-group-lg" style="width: 350px; margin-left: 10px;">
+					<div class="input-group-prepend">
+							<span class="input-group-text" id="inputGroup-sizing-lg">Number of Processes</span>
+					</div>
+		<input style="color:white" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id = "totalpros" onkeyup="addInitials()"></input>
+			</div>
+		</div>
+		<br>
+		<br>
+		<br>
+		<div id = "allocated" style="margin-left:10px;"></div>
+		<br><br/>
+		<br><br/>
+		<div id = "need" style="margin-left:10px;"></div>
+		<br><br/>
+		<br><br/>
+		
+		
+		<div  style="text-align:center;">
+					<button class="btn btn-outline-dark" onclick="detection()" >Run</button>
+		</div>
+		<div id = "output">
+
+		</div>
+		<br>
+		<br/>
+		<div id = "output1">
+
+		</div>
+		
+		
+  </body>
+</html>

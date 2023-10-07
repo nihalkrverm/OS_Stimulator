@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link href="css/dining.css" rel="stylesheet" />
+	<script type="text/javascript" src="../Index/js/scrolloverflow.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="../Index/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../Index/css/bootswatch.css" />
+   	<script type="text/javascript" src="../Index/js/jquery.fullPage.js"></script>
+    <script type="text/javascript">
+    	$(document).ready(function() {
+    		$('#fullpage').fullpage({
+    			sectionsColor: ['#00000'],
+    			anchors: ['anime'],
+    			menu: '#menu',
+    			easingcss3: 'cubic-bezier(0.175, 0.885, 0.320, 1.275)'
+    		});
+    	});
+      </script>
+
+
+
+
+
+
+
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+
+<!-- Bootstrap core CSS -->
+<link href="../../home/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Additional CSS Files -->
+<link rel="stylesheet" href="../../home/assets/css/fontawesome.css">
+<link rel="stylesheet" href="../../home/assets/css/templatemo-grad-school.css">
+<link rel="stylesheet" href="../../home/assets/css/owl.css">
+<link rel="stylesheet" href="../../home/assets/css/lightbox.css">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.button {
+  border-radius: 6px;
+  background-color: #072c4f;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.btn-row {
+    margin-top: 50px;
+    animation-name: FadeOut;
+    animation-duration: 5s;
+}
+
+@keyframes FadeOut {
+  0% {
+    /* position: absolute; */
+    opacity: 0;
+  }
+
+  75% {
+    /* position: absolute; */
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.heading {
+  font-size: 60px;
+  text-align: center;
+  margin-top: 50px;
+  opacity: 1;
+  animation-name: FadeOut;
+  animation-duration: 5s;
+  color: rgb(20, 1, 1);
+}
+
+.choose {
+  font-size: 30px;
+  text-align: center;
+  margin-top: 90px;
+  opacity: 1;
+  animation-name: FadeOut;
+  animation-duration: 5s;
+  color: rgb(133, 133, 133);
+}
+
+</style>
+
+
+
+</head>
+
+<body  style="background-color: rgba(48, 62, 89, 0.95);">
+	<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+	    <a class="navbar-brand" href="../Index/index.html#firstPage">Operationg System Simulator</a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation" style="">
+	        <span class="navbar-toggler-icon"></span>
+	      </button>         
+
+	    <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="../Index/index.html#secondPage">Process Scheduling<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../Disk/disk.html">Disk Scheduling</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Banker's Algorithm</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../Index/index.html#5thpage">Process Synchronization</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../Index/index.html#6thpage">Page Replacement</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../Index/index.html#7thpage">File Management</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../Index/about.html">About</a>
+              </li>
+            </ul>
+        </div>
+    </nav> -->
+
+    <header class="main-header clearfix" role="header">
+		<div class="logo">
+		  <a href="#"><em>OS</em> SIMULATOR</a>
+		</div>
+		<a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+		<nav id="menu" class="main-nav" role="navigation">
+		  <ul class="main-menu">
+			<li><a href="../../home/index.html#section1">Home</a></li>
+			<li class="has-submenu"><a href="#section2">Summary</a>
+			  <ul class="sub-menu" text-align: left>
+				<li><a href="../../home/index.html#section2">Os Algorithms</a></li>
+				<!-- <li><a href="#section3">What we do?</a></li> -->
+				<!-- <li><a href="#section3">How it works?</a></li> -->
+				<!-- <li><a href="https://templatemo.com/about" rel="sponsored" class="external">External URL</a></li> -->
+			  </ul>
+			</li>
+			<li><a href="../../home/index.html#section4">ALGORITHMS</a></li>
+			<!-- <li><a href="#section5">Video</a></li> -->
+			<li><a href="#section6">Contact</a></li>
+			<li><a href="" class="external">External</a></li>
+		  </ul>
+		</nav>
+	  </header>
+
+
+
+
+
+
+<br><br><br><br>
+	 
+
+
+	  <div class="container btn-row">
+		<div class="offset-md-4 col-md-3">
+		  <button class="button" onclick="window.location.href='../DP_console.htm'"><span>WIKI</span></button>
+		</div>
+			  <div class="offset-md-4 col-md-3">
+				<button class="button" onclick="window.location.href='#section2'"><span>Simulation</span></button>
+			  </div>
+			  <!-- <div class="col-md-3"></div>
+				  <button class="button" onclick="window.location.href='./mvt.html'"><span>MVT</span></button>
+			  </div> -->
+			  <!-- <div class="offset-md-4 col-md-3">
+				<button class="button" onclick="window.location.href='./mvt.html'"><span>MVT</span></button>
+			  </div> -->
+		  </div>    
+	  </div>
+
+
+
+
+
+
+
+   
+    <!-- <div id="fullpage">
+		<div class="section " id="section0">
+			<div class="container">
+		        <div class="jumbotron">
+		            <h1 class="display-3">Simulation of Dining Philosophers Problem</h1>
+		            <p class="lead">A classical problem to demonstrate the programming of concurrent or parallel processes</p>
+		            <hr class="my-4">
+		            <p>The dining philosopher's problem is the classical problem of synchronization which says that (typically)five philosophers are sitting around a circular table and their job is to think and eat alternatively. In this simulation of the problem, we can change the number of philosophers dining. This program shows the status of the philosophers one step at a time.</p>
+
+		            <p class="lead">
+		              <a class="btn btn-success" href="#" role="button">Wiki</a>
+				  <a class="btn btn-success" href="DP_console.htm" role="button">Console</a>
+		            </p>
+		            <p class="lead">
+		              <a class="btn btn-success" href="dining.html#anim" role="button">Play</a>
+		            </p>
+		        </div>
+	        <br>
+	    	</div>
+		</div> -->
+		<div class="section" id="section2">
+			<div class="container" id="anim">
+				<img id="table" src="includes/table.jpg" >
+				<img id="food" src="includes/noodles.jpg" >
+				
+				<button type="button" class="next" onclick="simulate()">Next</button>
+				
+				<div>
+					<img id="phil1" src="includes/thinking.jpg" >
+					<img id="phil2" src="includes/thinking.jpg" >
+					<img id="phil3" src="includes/thinking.jpg" >
+					<img id="phil4" src="includes/thinking.jpg" >
+					<img id="phil5" src="includes/thinking.jpg" >
+				</div>
+				
+				<div id="c4"></div>
+				<div id="c0"></div>
+				<div id="c1"></div>
+				<div id="c2"></div>
+				<div id="c3"></div>
+				
+				<img id="think" src="includes/thinking.jpg" align="right"><div id="thinkt">Thinking</div>
+				<img id="hungry" src="includes/hungry.jpg" align="right"><div id="hungryt">Hungry</div>
+				<img id="eating" src="includes/eating.jpg" align="right"><div id="eatingt">Eating</div>
+				
+				<div id="p1">Philosopher 1</div>
+				<div id="p2">Philosopher 2</div>
+				<div id="p3">Philosopher 3</div>
+				<div id="p4">Philosopher 4</div>
+				<div id="p5">Philosopher 5</div>
+
+				<div id="random">Random number generated : 0</div>
+				
+				<p id="ph1">Philosopher 1 - Thinking</p>
+				<p id="ph2">Philosopher 2 - Thinking</p>
+				<p id="ph3">Philosopher 3 - Thinking</p>
+				<p id="ph4">Philosopher 4 - Thinking</p>
+				<p id="ph5">Philosopher 5 - Thinking</p>
+			</div>
+		</div>
+	<script>
+	
+		var phil = [0,0,0,0,0], chopsticks = [0,0,0,0,0];
+
+		function simulate() 
+		{
+			var n = Math.floor((Math.random() * 5) + 1);
+		
+			document.getElementById("random").innerHTML = "Random number generated : "+n;
+			if(phil[n-1]==0)
+			{
+				phil[n-1] = 1;
+				document.getElementById("phil"+n).src = "includes/hungry.jpg";
+				document.getElementById("ph"+n).innerHTML = "Philosopher " + n + " - Hungry";
+			}
+			else if(phil[n-1]==1)
+			{
+				if(chopsticks[n-1]==0 && chopsticks[n%5]==0)
+				{
+					chopsticks[n-1]=1;
+					chopsticks[n%5]=1;
+					phil[n-1] = 2;
+					document.getElementById("phil"+n).src = "includes/eating.jpg";
+					document.getElementById("c"+(n+1)%5).style.display = "none";
+					document.getElementById("c"+(n)%5).style.display = "none";
+					document.getElementById("ph"+n).innerHTML = "Philosopher " + n + " - Eating";
+				}
+				else
+				{
+					alert("Philosopher " + n + " cannot eat now!");
+				}
+			}
+			else if(phil[n-1]==2)
+			{
+					chopsticks[n-1]=0;
+					chopsticks[n%5]=0;
+					phil[n-1] = 0;
+					document.getElementById("phil"+n).src = "includes/thinking.jpg";
+					document.getElementById("c"+n%5).style.display = "block";
+					document.getElementById("c"+(n+1)%5).style.display = "block";
+					document.getElementById("ph"+n).innerHTML = "Philosopher " + n + " - Thinking";
+			}
+		}
+	
+	</script>
+	
+</body>
+
+</html>

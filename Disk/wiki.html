@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+
+	
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+  <title>Project</title>
+  
+  <!-- Bootstrap core CSS -->
+  <link href="../home/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="../home/assets/css/fontawesome.css">
+  <link rel="stylesheet" href="../home/assets/css/templatemo-grad-school.css">
+  <link rel="stylesheet" href="../home/assets/css/owl.css">
+  <link rel="stylesheet" href="../home/assets/css/lightbox.css">
+
+
+
+
+
+
+
+  
+
+  <title>Page Replacement</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+</head>
+
+<body style="background-color: rgba(48, 62, 89, 0.95)";>
+  
+<header class="main-header clearfix" role="header">
+	<div class="logo">
+	  <a href="#"><em>OS</em> SIMULATOR</a>
+	</div>
+	<a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+	<nav id="menu" class="main-nav" role="navigation">
+	  <ul class="main-menu">
+		<li><a href="../home/index.html#section1">Home</a></li>
+		<li class="has-submenu"><a href="../home/index.html#section2">Summary</a>
+		  <ul class="sub-menu" text-align: left>
+			<li><a href="#section2">Os Algorithms</a></li>
+			<!-- <li><a href="#section3">What we do?</a></li> -->
+			<!-- <li><a href="#section3">How it works?</a></li> -->
+			<!-- <li><a href="https://templatemo.com/about" rel="sponsored" class="external">External URL</a></li> -->
+		  </ul>
+		</li>
+		<li><a href="#section4">ALGORITHMS</a></li>
+		<!-- <li><a href="#section5">Video</a></li> -->
+		<li><a href="#section6">Contact</a></li>
+		<li><a href="https://templatemo.com" class="external">External</a></li>
+	  </ul>
+	</nav>
+  </header>
+  <br><br><br><br>
+  <div class="container">
+    <div class="jumbotron">
+      <h1 class="display-3">Disk Scheduling</h1>
+      <p class="lead">Disk scheduling is done by operating systems to schedule I/O requests arriving for the disk. Disk scheduling is also known as I/O scheduling.</p>
+      <!-- <hr class="my-4"> -->
+      <!-- <p class="lead">
+        <a class="btn btn-success" href="simulate.html" role="button">SIMULATE</a>
+      </p> -->
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="card text-white bg-dark mb-3" style="max-width: 25rem;">
+          <!-- <div class="card-header">FIFO</div> -->
+          <div class="card-body">
+            <h4 class="card-title">First In First Out</h4>
+            <p class="card-text">FCFS is the simplest of all the Disk Scheduling Algorithms. In FCFS, the requests are addressed in the order they arrive in the disk queue.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card text-white bg-dark mb-3" style="max-width: 25rem;">
+          <!-- <div class="card-header">LRU</div> -->
+          <div class="card-body">
+            <h4 class="card-title">Shortest Seek Time First</h4>
+            <p class="card-text">In SSTF, requests having shortest seek time are executed first. So, the seek time of every request is calculated in advance in the queue and then they are scheduled according to their calculated seek time.
+                <br> As a result, the request near the disk arm will get executed first.
+                 SSTF is certainly an improvement over FCFS as it decreases the average response time and increases the throughput of system.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card text-white bg-dark mb-3" style="max-width: 25rem;">
+          <!-- <div class="card-header">Optimal</div> -->
+          <div class="card-body">
+            <h4 class="card-title">SCAN</h4>
+            <p class="card-text">In SCAN algorithm the disk arm moves into a particular direction and services the requests coming in its path and after reaching the end of disk, it reverses its direction and again services the request arriving in its path.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card text-white bg-dark mb-3" style="max-width: 25rem;">
+          <!-- <div class="card-header">Optimal</div> -->
+          <div class="card-body">
+            <h4 class="card-title">C-SCAN</h4>
+            <p class="card-text">In CSCAN algorithm, the disk arm instead of reversing its direction goes to the other end of the disk and starts servicing the requests from there. So, the disk arm moves in a circular fashion and this algorithm is also similar to SCAN algorithm and hence it is known as C-SCAN (Circular SCAN).</p>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>

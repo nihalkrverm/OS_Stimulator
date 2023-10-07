@@ -1,0 +1,14 @@
+a:hover {
+    color:rgb(116, 17, 197);
+    font-family: monospace;
+}
+
+.random-class {
+    /* font-family: 'Segoe UI', Tahoma, Verdana, sans-serif; */
+    /* color: rgb(116, 17, 197);
+    width: 500px;
+    border: 1px solid black; */
+    color: red;
+    width: 500px;
+    border: 1px solid black;
+}

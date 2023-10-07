@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+
+
+
+	
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <title>Page Replacement</title>
+    
+    <!-- Bootstrap core CSS -->
+    <link href="../home/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="../home/assets/css/fontawesome.css">
+    <link rel="stylesheet" href="../home/assets/css/templatemo-grad-school.css">
+    <link rel="stylesheet" href="../home/assets/css/owl.css">
+    <link rel="stylesheet" href="../home/assets/css/lightbox.css">
+
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="./bootstrap.min.css">
+
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+</head>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.button {
+  border-radius: 6px;
+  background-color: #063c6f;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.btn-row {
+    margin-top: 50px;
+    animation-name: FadeOut;
+    animation-duration: 5s;
+}
+
+@keyframes FadeOut {
+  0% {
+    /* position: absolute; */
+    opacity: 0;
+  }
+
+  75% {
+    /* position: absolute; */
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.heading {
+  font-size: 30px;
+  text-align: center;
+  margin-top: 50px;
+  opacity: 1;
+  animation-name: FadeOut;
+  animation-duration: 5s;
+  color: rgb(1, 5, 10);
+}
+
+.choose {
+  font-size: 30px;
+  text-align: center;
+  margin-top: 90px;
+  opacity: 1;
+  animation-name: FadeOut;
+  animation-duration: 5s;
+  color: rgb(5, 2, 5);
+}
+
+
+</style>
+
+
+<body style="background-color: rgba(48, 62, 89, 0.95);">
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+	<a class="navbar-brand" href="../os_sim.html" style="color:white;">OS Simulator</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+			<li class="nav-item active" style="color:white;">
+				<a class="nav-link" style="color:white;" href="wiki.html">Wiki</a>
+			</li>
+		</ul>
+	</div>
+</nav> -->
+			  
+
+
+<header class="main-header clearfix" role="header">
+	<div class="logo">
+	  <a href="#"><em>OS</em> SIMULATOR</a>
+	</div>
+	<a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+	<nav id="menu" class="main-nav" role="navigation">
+	  <ul class="main-menu">
+		<li><a href="../home/index.html#section1">Home</a></li>
+		<li class="has-submenu"><a href="../home/index.html#section2">Summary</a>
+		  <ul class="sub-menu" text-align: left>
+			<li><a href="../home/index.html#section2">Os Algorithms</a></li>
+			<!-- <li><a href="#section3">What we do?</a></li> -->
+			<!-- <li><a href="#section3">How it works?</a></li> -->
+			<!-- <li><a href="https://templatemo.com/about" rel="sponsored" class="external">External URL</a></li> -->
+		  </ul>
+		</li>
+		<li><a href="../home/index.html#section4">ALGORITHMS</a></li>
+		<!-- <li><a href="#section5">Video</a></li> -->
+		<li><a href="../home/index.html#section6">ABOUT</a></li>
+		<li><a href="" class="external">External</a></li>
+	  </ul>
+	</nav>
+  </header>
+
+<br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jumbotron">
+	<div class="displat-3" >
+		<h1>Page Replacement</h1>
+	</div>
+	<hr class="my-2">
+	<br/>
+	<div>
+ 		
+	<!-- <div class="container">
+			<div class="row">
+			  <div class="col-md-3"> -->
+				  <!-- <div class="card">
+					  <div class="card-body">
+						<h4 class="card-title">Process Scheduling</h4>
+						
+						<a href="Scheduling/index.html" class="btn btn-primary">Click</a>
+					  </div>
+					</div> -->
+					<!-- <div style="text-align:center">
+					  <div id="file">
+						  <i class="far fa-file" style="font-size: 40px;"></i>
+					  </div>
+					  <a href="fcfs.html" style="text-decoration:none;">First Come First Serve</a>
+					</div>
+					<div style="text-align:center;padding-top: 20px;">
+						<div id="file">
+							<i class="far fa-file" style="font-size: 40px;"></i>
+						</div>
+						<a href="sjf.html" style="text-decoration:none;">Shortest Job First</a>
+					  </div>
+			  </div>
+	
+			  <div class="col-md-3">
+					<div style="text-align:center">
+						<div id="file">
+							<i class="far fa-file" style="font-size: 40px;"></i>
+						</div>
+						<a href="srtf.html" style="text-decoration:none;">Shortest Remaining Time First</a>
+					  </div>
+	
+					  <div style="text-align:center;padding-top: 20px;">
+						  <div id="file">
+							  <i class="far fa-file" style="font-size: 40px;"></i>
+						  </div>
+						  <a href="ljf.html" style="text-decoration:none;">Longest Job First</a>
+						</div>
+			  </div>
+	
+			  <div class="col-md-3">
+				  
+					<div style="text-align:center">
+						<div id="file">
+							<i class="far fa-file" style="font-size: 40px;"></i>
+						</div>
+						<a href="lrtf.html" style="text-decoration:none;">Longest Remaining Time First</a>
+					  </div>
+	
+					  <div style="text-align:center;padding-top: 20px;">
+						  <div id="file">
+							  <i class="far fa-file" style="font-size: 40px;"></i>
+						  </div>
+						  <a href="priority.html" style="text-decoration:none;">Priority</a>
+						</div>
+			  </div>
+	
+	
+			  <div class="col-md-3">
+					<div style="text-align:center">
+						<div id="file">
+							<i class="far fa-file" style="font-size: 40px;"></i>
+						</div>
+						<a href="round-robin.html" style="text-decoration:none;">Round Robin</a>
+					  </div>
+	
+					  <div style="text-align:center;padding-top: 20px;">
+						  <div id="file">
+							  <i class="far fa-file" style="font-size: 40px;"></i>
+						  </div>
+						  <a href="prioritynonpre.html" style="text-decoration:none;">Priority Non Premptive</a>
+						</div>
+			  </div>
+			</div>
+	
+		  
+	</div>
+</div>  -->
+
+
+
+
+
+  
+
+<!-- <p class="heading">Memory Management</p> -->
+
+<div class="container btn-row">
+  <div class="offset-md-4 col-md-3">
+    <button class="button" onclick="window.location.href='wiki.html'"><span>WIKI</span></button>
+  </div>
+        <div class="offset-md-4 col-md-3">
+          <button class="button" onclick="window.location.href='simulate.html'"><span>Simulation</span></button>
+        </div>
+      
+		  <!-- <div class="offset-md-4 col-md-3">
+			<button class="button" onclick="window.location.href='./mvt.html'"><span>P2</span></button>
+		  </div>
+		  <div class="offset-md-4 col-md-3">
+			<button class="button" onclick="window.location.href='./mvt.html'"><span>P2</span></button>
+		  </div> -->
+    </div>    
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

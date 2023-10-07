@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    
+      <link rel="stylesheet" href="../home/assets/css/fontawesome.css">
+      <link rel="stylesheet" href="../home/assets/css/templatemo-grad-school.css">
+      <link rel="stylesheet" href="../home/assets/css/owl.css">
+      <link rel="stylesheet" href="../home/assets/css/lightbox.css">
+
+
+      <link href="../home/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+    	<title>Deadlock</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="../Index/css/bootswatch.css" />
+    </head>
+    <body style="background-color: #b0c1d0;">
+
+
+      <header class="main-header clearfix" role="header">
+        <div class="logo">
+          <a href="#"><em>OS</em> SIMULATOR</a>
+        </div>
+        <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+        <nav id="menu" class="main-nav" role="navigation">
+          <ul class="main-menu">
+            <li><a href="../home/index.html#section1">Home</a></li>
+            <li class="has-submenu"><a href="../home/index.html#section2">Summary</a>
+              <ul class="sub-menu" text-align: left>
+                <li><a href="#section2">Os Algorithms</a></li>
+                <!-- <li><a href="#section3">What we do?</a></li> -->
+                <!-- <li><a href="#section3">How it works?</a></li> -->
+                <!-- <li><a href="https://templatemo.com/about" rel="sponsored" class="external">External URL</a></li> -->
+              </ul>
+            </li>
+            <li><a href="../home/index.html#section4">ALGORITHMS</a></li>
+            <!-- <li><a href="#section5">Video</a></li> -->
+            <li><a href="../home/index.html#section6">ABOUT</a></li>
+            <li><a href="" class="external">External</a></li>
+          </ul>
+        </nav>
+      </header>
+    
+<br><br><br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="container">
+          <h2 style="text-align: center;">Deadlock</h2>
+          <div>
+            <h5><b><u>Deadlock Detection</u></b></h5>
+            <p>If all resources have only a single instance, then we can define a deadlock-detection algorithm that uses a variant of the resource-allocation graph, called a wait-for graph.
+              This graph is obtained from the resource-allocation graph by removing the resource nodes and collapsing the appropriate edges.
+              More precisely, an edge from P_i to P_j in a wait-for graph implies that process P_i is waiting for process P_j to release a resource that P_i needs.
+              As before, a deadlock exists in the system if and only if the wait-for graph contains a cycle.
+              To detect deadlocks, the system needs to maintain the wait-for graph and periodically invoke an algorithm that searches for a cycle in the graph.
+              If this graph contains one or more cycles (knots), a deadlock exists. Any process that is part of a cycle is deadlocked. If no cycles exist, the system is not deadlocked.
+            </p>
+            <img style="margin-bottom: 1rem;" src="./wait.jpeg" alt="">
+            <br>
+          </div>
+        	<div class="anim">
+            <h5 style="text-align: left;"><b><u>Banker's Algorithm</u></b></h5>
+            <p>It is a banker algorithm used to <b>avoid deadlock</b> and <b>allocate resources</b> safely to each process in the computer system.
+               The 'S-State' examines all possible tests or activities before deciding whether the allocation should be allowed to 
+               each process. It also helps the operating system to successfully share the resources between all the processes. 
+               The banker's algorithm is named because it checks whether a person should be sanctioned a loan amount or not to help 
+               the bank system safely simulate allocation resources.</p>
+
+               <p>
+                 <h6>Banker's Algorithm requires the below 3 things:</h6>
+                 <ul>
+                   <li>
+                    How much each process can request for each resource in the system. It is denoted by the [MAX] request.
+                   </li>
+                   <li>
+                    How much each process is currently holding each resource in a system. It is denoted by the [ALLOCATED] resource.
+                   </li>
+                   <li>
+                    It represents the number of each resource currently available in the system. It is denoted by the [AVAILABLE] resource.
+                   </li>
+                 </ul>
+               </p>
+               <p>
+                 <h6><b>Advantages</b></h6>
+                 <ul>
+                   <li>
+                    It contains various resources that meet the requirements of each process.
+                   </li>
+                   <li>
+                    Each process should provide information to the operating system for upcoming resource requests, the number of resources, and how long the resources will be held.
+                   </li>
+                   <li>
+                    It helps the operating system manage and control process requests for each type of resource in the computer system.
+                   </li>
+                 </ul>
+               </p>
+               <p>
+                 <h6><b>Disadvantages</b></h6>
+                 <ul>
+                   <li>
+                    It requires a fixed number of processes, and no additional processes can be started in the system while executing the process.
+                   </li>
+                   <li>
+                    The algorithm does no longer allows the processes to exchange its maximum needs while processing its tasks.
+                   </li>
+                   <li>
+                    Each process has to know and state their maximum resource requirement in advance for the system.
+                   </li>
+                 </ul>
+               </p>
+       		</div>
+        </div>
+    </body>
+</html>

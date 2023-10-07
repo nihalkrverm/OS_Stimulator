@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+  <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  
+	<title>Project</title>
+	
+	<!-- Bootstrap core CSS -->
+	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  
+	<!-- Additional CSS Files -->
+	<link rel="stylesheet" href="../home/assets/css/fontawesome.css">
+	<link rel="stylesheet" href="../home/assets/css/templatemo-grad-school.css">
+	<link rel="stylesheet" href="../home/assets/css/owl.css">
+	<link rel="stylesheet" href="../home/assets/css/lightbox.css">
+  
+  
+
+
+
+
+
+
+
+<link rel="stylesheet" href="./bootstrap.min.css">
+
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+<br><br><br>
+
+
+
+
+
+
+
+
+  <title>
+    WIKI
+  </title>
+<!-- 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<!-- </head>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid"> 
+    <div class="navbar-header">
+      <a class="navbar-brand" href="../os_sim.html" style="color:white;">OS simulator</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="index.html">Home</a></li>
+      <li class="active"><a href="#">Wiki</a></li>
+    </ul>
+  </div>
+</nav> -->
+<br><br><br>
+<style>
+  body{
+  margin-left: 0.5%;
+  margin-right: 2%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+} 
+/* 
+.flex-container {
+    display: -webkit-flex;
+    display: flex;  
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    text-align: center;
+}
+
+.flex-container > * {
+    padding: 15px;
+    -webkit-flex: 1 100%;
+    flex: 1 100%;
+}
+
+header {background: black;color:white;}
+
+.intro{
+  margin-top: 22px;
+  padding: 30px 0px;
+  background-color: #f3f3f3;
+}
+body{
+  margin-left: 5%;
+  margin-right: 2%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+} */
+</style>
+<body style="background-color: rgba(255, 255, 255, 0.95);">
+        
+      <header class="main-header clearfix" role="header">
+        <div class="logo">
+          <a href="#"><em>OS</em> SIMULATOR</a>
+        </div>
+        <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+        <nav id="menu" class="main-nav" role="navigation">
+          <ul class="main-menu">
+          <li><a href="../home/index.html#section1">Home</a></li>
+          <li class="has-submenu"><a href="../home/index.html#section2">Summary</a>
+            <ul class="sub-menu" text-align: left>
+            <li><a href="#section2">Os Algorithms</a></li>
+            <!-- <li><a href="#section3">What we do?</a></li> -->
+            <!-- <li><a href="#section3">How it works?</a></li> -->
+            <!-- <li><a href="https://templatemo.com/about" rel="sponsored" class="external">External URL</a></li> -->
+            </ul>
+          </li>
+          <li><a href="#section4">ALGORITHMS</a></li>
+          <!-- <li><a href="#section5">Video</a></li> -->
+          <li><a href="#section6">Contact</a></li>
+          <li><a href="https://templatemo.com" class="external">External</a></li>
+          </ul>
+        </nav>
+        </header>
+        
+    </div>
+
+  <h1>Introduction</h1>
+
+  <ul><li> CPU scheduling is a process which allows one process to use the CPU while the execution of another process 
+    is on hold(in waiting state) due to unavailability of any resource like I/O etc, thereby making full 
+    use of CPU. The aim of CPU scheduling is to make the system efficient, fast and fair.
+
+    Whenever the CPU becomes idle, the operating system must select one of the processes in the ready queue 
+    to be executed. The selection process is carried out by the short-term scheduler (or CPU scheduler). 
+    The scheduler selects from among the processes in memory that are ready to execute, and allocates 
+    the CPU to one of them.</li></ul>
+   
+ 
+
+  <h3> Following are some sheduling algorithms: </h3>
+
+<h2>First Come First Serve (FCFS)</h2>
+<p> </p>
+<ul>
+    <li>The simplest of all scheduling algorithms. The process that requested the CPU first 
+      is allocated the CPU first.
+      Unfortunately, however, FCFS can yield some very long average wait times, particularly if the 
+      first process to get there takes a long time.</li>
+    <li>FCFS can also block the system in a busy dynamic system in another way, known as the convoy effect. 
+      When one CPU intensive process blocks the CPU, a number of I/O intensive processes can get backed up 
+      behind it, leaving the I/O devices idle. When the CPU hog finally relinquishes the CPU, then the I/O 
+      processes pass through the CPU quickly, leavinwhile everyone queues up for I/O, and then the cycle 
+      repeats itself when the CPU intensive process gets back to the ready queue. </li>
+</ul>
+
+<h2>Shortest Job First (SJF)</h2>
+<p></p>
+  <ul>
+      <li>
+        The scheduling criteria under this policy depends on which process has the shortest-next-CPU-burst. 
+  It is an optimal way of CPU scheduling, i.e it gives the minimum average waiting time for a set of processes. 
+  If two process have the same burst time left, FCFS is used to resolve the tie.
+  SJF can be proven to be the fastest scheduling algorithm, 
+        but it suffers from one important problem: How do you know how 
+        long the next CPU burst is going to be? </li>
+        <li>
+            The next CPU burst length is thereby approximated using statistical techniques 
+            like exponential average.
+        </li>
+  </ul>
+
+<h2>Shortest Remaining Time First (SRTF)</h2>
+<ul><li>This is the preemptive version of Shortest Job First scheduling. A newly arrived process in 
+  the ready queue may have a burst time lesser than that of the current process getting executed. 
+  In such a case, the current process is preempted and the newly arrived process is scheduled to execute. 
+  Similar to SJF, FCFS is used to resolve the tie here.</li></ul>
+
+<h2>Non-preemptive priority</h2>
+<p>
+  <ul><li>A more general case of the SJF scheduling where the priority was based on burst time. 
+    Each process is associated with a priority and CPU is allocated to the process with highest priority. 
+    Equal priority processes are scheduled in FCFS order. A newly arrived process is simply put in the ready 
+    queue based on its priority and does not interrupt the currently executing process.
+    In a heavily loaded computer system, a steady stream of high priority processes can 
+    leave some low priority processes waiting for a long time. This is called as indefinite 
+    blocking or starvation</li></ul>
+
+</p>
+
+
+<h2>Preemptive priority</h2>
+<ul><li>It is a preemptive version of the priority scheduling algorithm. The priority of 
+  newly arrived processes are compared with the currently executing process. If the 
+  priority is higher, then the currently executing process is preempted and the newly 
+  arrived process executes</li></ul>
+<p></p>
+<h2>Round-Robin</h2>
+<p>
+ </p>
+  <ul>
+    <li>
+      The ready queue is treated as a circular queue. The CPU scheduler goes around the queue, 
+      allocating the CPU to each of the processes a time period of 1 quantum. If the burst time 
+      left for a process is less than the time quantum, then the process will itself release the 
+      CPU voluntarily. If the burst time left is more than 1 time quantum, the timer for that 
+      process will go off and a context switch is forced. This algorithm is preemptive.
+      Performance depends heavily on the time quantum. A very large time quantum 
+    will it make it effectively an FCFS algorithms and a very short time quantum will 
+    force a very large number of context switches.</li>
+    <li>A rule of thumb is that 80% of the CPU bursts must be shorter than the time quantum.</li>
+</ul>
+
+</body>
+</html>

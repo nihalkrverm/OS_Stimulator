@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+
+
+
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+  <title>Project</title>
+  
+  <!-- Bootstrap core CSS -->
+  <link href="../home/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="../home/assets/css/fontawesome.css">
+  <link rel="stylesheet" href="../home/assets/css/templatemo-grad-school.css">
+  <link rel="stylesheet" href="../home/assets/css/owl.css">
+  <link rel="stylesheet" href="../home/assets/css/lightbox.css">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <title>Page Replacement Demo</title>
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+ 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body style="padding:1px;">
+
+
+
+
+  <header class="main-header clearfix" role="header">
+    <div class="logo">
+      <a href="#"><em>OS</em> SIMULATOR</a>
+    </div>
+    <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+    <nav id="menu" class="main-nav" role="navigation">
+      <ul class="main-menu">
+      <li><a href="../home/index.html#section1">Home</a></li>
+      <li class="has-submenu"><a href="../home/index.html#section2">Summary</a>
+        <ul class="sub-menu" text-align: left>
+        <li><a href="#section2">Os Algorithms</a></li>
+        <!-- <li><a href="#section3">What we do?</a></li> -->
+        <!-- <li><a href="#section3">How it works?</a></li> -->
+        <!-- <li><a href="https://templatemo.com/about" rel="sponsored" class="external">External URL</a></li> -->
+        </ul>
+      </li>
+      <li><a href="#section4">ALGORITHMS</a></li>
+      <!-- <li><a href="#section5">Video</a></li> -->
+      <li><a href="#section6">Contact</a></li>
+      <li><a href="https://templatemo.com" class="external">External</a></li>
+      </ul>
+    </nav>
+    </header>
+
+<br><br>
+<br><br>
+
+
+
+
+
+
+
+
+
+
+  <div class="panel panel-warning">
+    <div class="panel-heading" style="background-color:#5D6D7E">
+      <h1 style="text-alig var text = JSON.strn:center; color:white">PAGE REPLACEMENT ALGORITHMS</h1>
+    </div>
+    <div class="panel-body" style="background-color:#34495E">
+      <div id="input">
+        <h4>Request string:</h4>
+        <form>
+          <input type="text" class="requests form-control" id="request_string" placeholder="Enter request string (space-separated)" />
+          <br>
+          <h4>Cache Size:</h4>
+          <input type="text" class="size form-control" id="csize" placeholder="Enter cache size i.e the number of frames" />
+          <br>
+          <br>
+          <br>
+          <input type="button" value="Submit" onclick="myfunction()" style="background-color:#52BE80 " />
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <button class="button btn-danger button1" onclick="fifo()">FIFO(First In First Out)</button>
+    <button class="button btn-primary button2" onclick="lru()">LRU(Least Recently Used)</button>
+    <button class="button btn-info button3" onclick="optimal()">Optimal</button>
+  </div>
+  <script src=simulate.js></script>
+</body>
+
+</html>
+
+
+<style>
+  .tab-content,
+  .nav nav-tabs {
+    padding: 30px;
+  }
+
+  body {
+    background-color: #D5DBDB;
+  }
+
+  #result {
+    margin-top: 25px;
+  }
+
+  #input {
+    margin: 10px;
+  }
+
+  .card {
+    position: relative;
+    border: 1px solid black;
+    float: left;
+    text-align: center;
+    width: 100px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+  }
+
+  .request {
+    border-bottom: 1px solid black;
+    margin-bottom: 10px;
+  }
+
+  .hitmiss {
+    margin-top: 10px;
+    border-top: 1px solid black;
+    color: white;
+  }
+
+  .hit {
+    background-color: green;
+  }
+
+  .miss {
+    background-color: red;
+  }
+
+  .status {
+    color: black;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  #answers {
+    display: block;
+    padding: 30px;
+  }
+
+  .ans {
+    text-transform: capitalize;
+  }
+
+  .nav.nav-tabs {
+    margin-left: 10px;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  #csize {
+    width: 300px;
+    position: relative;
+    float: left;
+  }
+
+  #submit {
+    margin-left: 10px;
+  }
+
+  .proceed {
+    float: right;
+    margin-right: 10px;
+  }
+</style>

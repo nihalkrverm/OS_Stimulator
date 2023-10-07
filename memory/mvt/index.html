@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+    <head>
+
+
+
+
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    
+        <title>MVT Partitioning | OS Lab Mini-Project</title>
+        
+        <!-- Bootstrap core CSS -->
+        <link href="../../home/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    
+        <!-- Additional CSS Files -->
+        <link rel="stylesheet" href="../../home/assets/css/fontawesome.css">
+        <link rel="stylesheet" href="../../home/assets/css/templatemo-grad-school.css">
+        <link rel="stylesheet" href="../../home/assets/css/owl.css">
+        <link rel="stylesheet" href="../../home/assets/css/lightbox.css">
+    
+      
+      
+      
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <meta charset="utf-8">
+        <title>Memory Allocation | OS Lab Mini-Project</title>
+        <link href="/styles/styles.css" ref="stylesheet">
+        <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+        <style>
+            .random-class {
+                font-family: 'Segoe UI', Tahoma, Verdana, sans-serif; 
+                color: rgb(116, 17, 197);
+                text-align: left;
+                /*padding-left: 5rem;
+                color: red;
+                width: 520px;
+                border: 1px solid black; */
+            }
+            a:hover {
+                color:rgb(116, 17, 197);
+                font-family: monospace;
+            }
+            .regular-text {
+                padding-left: 2.5rem;
+                font-family: Arial, Helvetica, sans-serif;
+                color: black;
+            }
+            .output-text {
+                font-style: italic;
+                font-weight: bold;
+                font-family: monospace;
+                font-size: large;
+                padding-left: 2.5rem;
+            }
+            canvas {
+                border:2px solid white;
+            }
+            .container {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            }
+            .leftThing {
+            width: 45%;
+            }
+            .centregap {
+                width: 5%
+            }
+            .rightThing {
+            width: 45%;
+            }
+        </style>
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script> -->
+        <script>
+           $(function(){
+
+            // get a reference to the canvas and context
+            var canvas=document.getElementById("canvas");
+            var ctx=canvas.getContext("2d");
+        
+            // vars for current width and height of a canvas rectangle
+            var length;
+            var height=50;
+        
+            // references to the input-text elements 
+            // used to let user change the rect width & height
+            var $length=document.getElementById('tm');
+            var $height=document.getElementById('tm');
+        
+            // set the initial input-text values to the width/height vars
+            $length.value=length;
+            // $height.value=height;
+        
+            // call the draw command
+            draw();
+        
+            // listen for keyup events on length input-text elements
+            // Get the current values from input-text & set the length 
+            // call draw to redraw the rect with the current width/height values
+            $length.addEventListener("keyup", function(){
+                length=this.value;
+                draw();
+            }, false);
+        
+            // draw() clears the canvas and redraws the rect
+            // based on user input
+            function draw(){
+                ctx.clearRect(0,0,canvas.width,canvas.height);
+                ctx.fillRect(40,40,length,height);
+            }
+            }); 
+        </script>
+
+    </head>
+    <body class="text-md-left">
+
+
+
+
+
+
+
+
+
+
+
+        <header class="main-header clearfix" role="header">
+            <div class="logo">
+              <a href="#"><em>OS</em> SIMULATOR</a>
+            </div>
+            <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+            <nav id="menu" class="main-nav" role="navigation">
+              <ul class="main-menu">
+                <li><a href="../../home/index.html#section1">Home</a></li>
+                <li class="has-submenu"><a href="../../home/index.html#section2">Summary</a>
+                  <ul class="sub-menu" text-align: left>
+                    <li><a href="../../home/index.html">Os Algorithms</a></li>
+                    <!-- <li><a href="#section3">What we do?</a></li> -->
+                    <!-- <li><a href="#section3">How it works?</a></li> -->
+                    <!-- <li><a href="https://templatemo.com/about" rel="sponsored" class="external">External URL</a></li> -->
+                  </ul>
+                </li>
+                <li><a href="../../home/index.html">ALGORITHMS</a></li>
+                <!-- <li><a href="#section5">Video</a></li> -->
+                <li><a href="#section6">Contact</a></li>
+                <li><a href="" class="external">External</a></li>
+              </ul>
+            </nav>
+          </header>
+        
+        <br><br><br><br>
+        
+        
+
+        <main>
+            <div class="container">
+                <div class="leftThing">
+                <h2 class="h3 mb-3 fw-normal"><b>Memory Allocation in OS</b></h2>
+                <div id="info">
+                    <p class="mb-3 fw-normal">In the MVT scheme, there is no fixed size or partition defined in the memory.
+                        Initially, all memory is available for allocation and is considered as a single 'hole'.
+                        Processes are allocated memory as and when they arrive. This prevents any internal fragmentation as there is a more contiguous
+                        allocation of memory. As there is no limitation on process size (due to a partition size), the degree of multiprogramming is 
+                        higher than in MFT and is dynamic. However, external fragmentation can occur as processes may leave holes upon terminating
+                        which are too small to be used by a new process. 
+                    </p>
+                    <p class="mb-3 fw-normal">
+                        We simulate the MVT technique below:
+                    </p>
+                </div>
+                <!-- <form id="mvt-form" class="regular-text"> -->
+                    <div class="mb-3 fw-normal">
+                        <label for="tm">Enter the total available memory: </label>
+                        <input type="text" id="tm" size="10" required><br>
+                        <button id="submit-btn" type="submit" class="w-30 btn btn-lg btn-primary">Create Memory</button><br> 
+                    </div>
+                    <!-- Empty div -->
+                    <div>
+
+                    </div>
+                    <div class="mb-3 fw-normal">
+                        <h3 class="h3 mb-3 fw-normal">Allocating Memory</h3> 
+                        <label for="process-id-input">Enter the process number: </label>
+                        <input id="process-id-input" type="text" size="3">
+                        <label for="process-size" >Enter size of process to be allocated in memory</label>
+                        <input id="process-size" type="text" placeholder="In bytes" size="6"><br>
+                        <button id="allocate-btn" type="submit" class="w-30 btn btn-lg btn-primary">Allocate Memory</button><br><br>
+                    </div>
+                    
+                    <div class="mb-3 fw-normal">
+                        <h3 class="h3 mb-3 fw-normal">Deallocating Memory</h3>
+                        <label for="process-id-dealloc">Enter process number to be deallocated: </label>
+                        <input id="process-id-dealloc" type="text" size="2"><br>
+                        <button id="deallocate-btn" type="submit" class="w-30 btn btn-lg btn-primary">Deallocate Memory</button><br><br>
+                    </div>
+                    
+                <!-- </form> -->
+                </div>
+                <div class="centregap">
+                </div>
+                <div class="rightThing">
+                    <p class="h3 mb-3 fw-normal"><b>Output</b></p>
+                    <label class="mb-3 fw-normal">Memory Size: </label>
+                    <canvas id="canvas" width=750 height=70></canvas>
+                    <p class="mb-3 fw-normal" id="output"></p>
+                </div>
+                
+            </div>
+        </main>
+    </body>
+    <script src="scripts/mvt.js"></script>
+</html>
